@@ -21,7 +21,7 @@ class CurrentWeatherTest {
         WeatherService service = retrofit.create(WeatherService.class);
 
         //when
-        CurrentWeather weather = service.getCurrentWeather().blockingFirst();
+        CurrentWeather weather = service.getCurrentWeather("New York").blockingFirst();
 
         //then
         assertNotNull(weather);
