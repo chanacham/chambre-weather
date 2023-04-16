@@ -28,4 +28,23 @@ class CurrentWeatherTest {
         assertNotNull(weather.getWeather().get(0).getDescription());
     }
 
+    @Test
+    public void getCurrentForecast(){
+        //given
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.openweathermap.org/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+                .build();
+        WeatherService service = retrofit.create(WeatherService.class);
+
+        //when
+        CurrentWeather forecast = service.getCurrentForecast("Passaic").blockingFirst();
+
+        //then
+        assertNotNull(forecast);
+       // assertNotNull(forecast.getMain());
+    }
+
+
 }
