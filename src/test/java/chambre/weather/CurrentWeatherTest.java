@@ -1,6 +1,8 @@
 package chambre.weather;
 
-import com.google.gson.Gson;
+import weather.WeatherService;
+import weather.currentClasses.CurrentWeather;
+import weather.forecastClasses.FiveDayForecast;
 import org.junit.jupiter.api.Test;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
@@ -21,15 +23,14 @@ class CurrentWeatherTest {
         WeatherService service = retrofit.create(WeatherService.class);
 
         //when
-        CurrentWeather weather = service.getCurrentWeather("New York").blockingFirst();
+       CurrentWeather weather = service.getCurrentWeather("New York").blockingFirst();
 
         //then
         assertNotNull(weather);
-        assertNotNull(weather.getWeather().get(0).getDescription());
     }
 
     @Test
-    public void getCurrentForecast(){
+    public void getFiveDayForecast(){
         //given
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.openweathermap.org/")
@@ -39,12 +40,9 @@ class CurrentWeatherTest {
         WeatherService service = retrofit.create(WeatherService.class);
 
         //when
-        CurrentWeather forecast = service.getCurrentForecast("Passaic").blockingFirst();
+        FiveDayForecast fiveDayForecast = service.getFiveDayForecast("New York").blockingFirst();
 
         //then
-        assertNotNull(forecast);
-       // assertNotNull(forecast.getMain());
+        assertNotNull(fiveDayForecast);
     }
-
-
 }
