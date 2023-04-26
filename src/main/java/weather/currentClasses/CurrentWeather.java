@@ -1,10 +1,10 @@
 
 package weather.currentClasses;
 
-import weather.Clouds;
-import weather.Coord;
-import weather.Weather;
-import weather.Wind;
+import weather.chambre.Clouds;
+import weather.chambre.Coord;
+import weather.chambre.Weather;
+import weather.chambre.Wind;
 
 import java.util.List;
 

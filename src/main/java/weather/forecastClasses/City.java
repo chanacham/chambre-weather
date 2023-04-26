@@ -1,7 +1,7 @@
 
 package weather.forecastClasses;
 
-import weather.Coord;
+import weather.chambre.Coord;
 
 public class City {
     private Coord mCoord;

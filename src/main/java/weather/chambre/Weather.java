@@ -1,5 +1,5 @@
 
-package weather;
+package weather.chambre;
 
 public class Weather {
 

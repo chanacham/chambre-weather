@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CurrentWeatherTest {
 
     @Test
-    public void getCurrentWeather(){
+    public void getCurrentWeather() {
         //given
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.openweathermap.org/")
@@ -23,14 +23,16 @@ class CurrentWeatherTest {
         WeatherService service = retrofit.create(WeatherService.class);
 
         //when
-       CurrentWeather weather = service.getCurrentWeather("New York").blockingFirst();
+        CurrentWeather weather = service.getCurrentWeather("New York").blockingFirst();
 
         //then
         assertNotNull(weather);
+        assertNotNull(service.getCurrentWeather("New York"));
+
     }
 
     @Test
-    public void getFiveDayForecast(){
+    public void getFiveDayForecast() {
         //given
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.openweathermap.org/")
@@ -44,5 +46,6 @@ class CurrentWeatherTest {
 
         //then
         assertNotNull(fiveDayForecast);
+        assertNotNull(service.getFiveDayForecast("New York"));
     }
 }
