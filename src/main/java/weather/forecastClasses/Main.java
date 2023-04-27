@@ -8,8 +8,24 @@ public class Main {
     private Long mHumidity;
     private Long mPressure;
     private Long mSeaLevel;
-    private Double mTemp;
-    private Double mTempKf;
-    private Double mTempMax;
-    private Double mTempMin;
+    private Double temp;
+    private Double tempKf;
+    private Double tempMax;
+    private Double tempMin;
+
+    public Double getTemp() {
+        return temp;
+    }
+
+    public Double getTempKf() {
+        return tempKf;
+    }
+
+    public Double getTempMax() {
+        return tempMax;
+    }
+
+    public Double getTempMin() {
+        return tempMin;
+    }
 }

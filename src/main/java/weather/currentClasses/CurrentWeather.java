@@ -16,11 +16,15 @@ public class CurrentWeather {
     private Coord mCoord;
     private Long mDt;
     private Long mId;
-    private Main mMain;
+    private Main main;
     private String mName;
     private Sys mSys;
     private Long mTimezone;
     private Long mVisibility;
     private List<Weather> mWeather;
     private Wind mWind;
+
+    public Main getMain() {
+        return main;
+    }
 }

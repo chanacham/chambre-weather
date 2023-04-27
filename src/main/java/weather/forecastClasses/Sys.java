@@ -4,6 +4,9 @@ package weather.forecastClasses;
 
 public class Sys {
 
-    private String mPod;
+    private String pod;
 
+    public String getPod() {
+        return pod;
+    }
 }

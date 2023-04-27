@@ -10,10 +10,18 @@ public class List {
     private Clouds mClouds;
     private Long mDt;
     private String mDtTxt;
-    private Main mMain;
+    private Main main;
     private Long mPop;
     private Sys mSys;
     private Long mVisibility;
-    private java.util.List<Weather> mWeather;
+    private java.util.List<Weather> weather;
     private Wind mWind;
+
+    public Main getMain() {
+        return main;
+    }
+
+    public java.util.List<Weather> getWeather() {
+        return weather;
+    }
 }

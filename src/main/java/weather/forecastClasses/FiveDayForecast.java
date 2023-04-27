@@ -4,9 +4,14 @@ package weather.forecastClasses;
 
 public class FiveDayForecast {
 
-    private City mCity;
-    private Long mCnt;
-    private String mCod;
-    private java.util.List<List> mList;
-    private Long mMessage;
+    private City city;
+    private Long cnt;
+    private String cod;
+    private java.util.List<List> list;
+    private Long message;
+
+
+    public java.util.List<List> getList() {
+        return list;
+    }
 }

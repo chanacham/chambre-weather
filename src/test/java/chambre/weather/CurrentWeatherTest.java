@@ -28,7 +28,7 @@ class CurrentWeatherTest {
         //then
         assertNotNull(weather);
         assertNotNull(service.getCurrentWeather("New York"));
-
+        assertNotNull(weather.getMain().getHumidity());
     }
 
     @Test
@@ -47,5 +47,6 @@ class CurrentWeatherTest {
         //then
         assertNotNull(fiveDayForecast);
         assertNotNull(service.getFiveDayForecast("New York"));
+        assertNotNull(fiveDayForecast.getList().get(0).getMain().getTemp());
     }
 }
