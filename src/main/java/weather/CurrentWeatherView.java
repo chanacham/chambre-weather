@@ -15,21 +15,14 @@ import java.awt.*;
 public class CurrentWeatherView extends JComponent {
     private FiveDayForecast fiveDayForecast;
 
-//    public CurrentWeatherView(FiveDayForecast input) {
-//        this.fiveDayForecast = input;
-//    }
-
     @Override
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
         int height = getHeight();
-
-        //translates the origin to lower left corner
         g.translate(0, height);
 
         java.util.List<List> forecastList = fiveDayForecast.getList();
-
 
         for (int i = 0; i < forecastList.size() - 1; i++) {
 

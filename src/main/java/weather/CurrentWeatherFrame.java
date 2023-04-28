@@ -45,9 +45,9 @@ public class CurrentWeatherFrame extends JFrame {
         button.addActionListener(e -> {
             button.requestFocus();
             setLocation(cityInput.getText());
+            fiveDayForecast = service.getFiveDayForecast(location).blockingFirst();
             view.setFiveDayForecast(fiveDayForecast);
         });
-
         cityPanel.add(button, 1);
 
         panel.add(cityPanel, BorderLayout.NORTH);
