@@ -14,15 +14,17 @@ import java.awt.event.ActionListener;
 import static java.awt.SystemColor.text;
 
 public class CurrentWeatherFrame extends JFrame {
+    private JButton submit = new JButton("Submit");
+    private TextField location = new TextField("New York");
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://api.openweathermap.org/")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build();
     WeatherService service = retrofit.create(WeatherService.class);
-    private String location = "New York";
-    FiveDayForecast fiveDayForecast = service.getFiveDayForecast(location).blockingFirst();
+    private CurrentWeatherView view = new CurrentWeatherView();
 
+    ForecastWeatherController controller;
     public CurrentWeatherFrame() {
         setSize(800, 600);
         setTitle("Current Weather");
@@ -30,40 +32,28 @@ public class CurrentWeatherFrame extends JFrame {
 
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
-        CurrentWeatherView view = new CurrentWeatherView();
-        view.setFiveDayForecast(fiveDayForecast);
-        panel.add(view);
+
+        setContentPane(panel);
+        panel.add(view,BorderLayout.CENTER);
 
         JPanel cityPanel = new JPanel();
         cityPanel.setLayout(new GridLayout(1, 2));
 
-        TextField cityInput = new TextField(1);
-        cityInput.setSize(new Dimension(100, 100));
-        cityPanel.add(cityInput, 0);
-
-        Button button = new Button("Submit");
-        button.setSize(new Dimension(10, 10));
-        button.addActionListener(e -> {
-            button.requestFocus();
-            setLocation(cityInput.getText());
-
-            updateWeather(view);
-        });
-        cityPanel.add(button, 1);
-
+        cityPanel.add(location, BorderLayout.CENTER);
+        cityPanel.add(submit, BorderLayout.EAST);
         panel.add(cityPanel, BorderLayout.NORTH);
-        setContentPane(panel);
+
+        controller = new ForecastWeatherController(view,service);
+
+        controller.updateWeather("New York");
+
+        submit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.updateWeather(location.getText());
+            }
+        });
+
     }
 
-    public void updateWeather(CurrentWeatherView view) {
-        service.getFiveDayForecast(location)
-                .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.newThread())
-                .subscribe(view::setFiveDayForecast,
-                        Throwable::printStackTrace);
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
 }

@@ -24,7 +24,7 @@ public class CurrentWeatherView extends JComponent {
 
         java.util.List<List> forecastList = fiveDayForecast.getList();
 
-        for (int i = 0; i < forecastList.size() - 1; i++) {
+        for (int i = 0; i < forecastList.size() -1 ; i++) {
 
             int temp = forecastList.get(i).getMain().getTemp().intValue();
             int nextTemp = forecastList.get(i + 1).getMain().getTemp().intValue();
