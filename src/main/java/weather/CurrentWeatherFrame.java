@@ -1,5 +1,6 @@
 package weather;
 
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -45,13 +46,21 @@ public class CurrentWeatherFrame extends JFrame {
         button.addActionListener(e -> {
             button.requestFocus();
             setLocation(cityInput.getText());
-            fiveDayForecast = service.getFiveDayForecast(location).blockingFirst();
-            view.setFiveDayForecast(fiveDayForecast);
+
+            updateWeather(view);
         });
         cityPanel.add(button, 1);
 
         panel.add(cityPanel, BorderLayout.NORTH);
         setContentPane(panel);
+    }
+
+    public void updateWeather(CurrentWeatherView view) {
+        service.getFiveDayForecast(location)
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.newThread())
+                .subscribe(view::setFiveDayForecast,
+                        Throwable::printStackTrace);
     }
 
     public void setLocation(String location) {
