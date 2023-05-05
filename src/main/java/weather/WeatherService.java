@@ -1,10 +1,11 @@
 package weather;
 
-import weather.currentClasses.CurrentWeather;
-import weather.forecastClasses.FiveDayForecast;
 import io.reactivex.rxjava3.core.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import weather.current.CurrentWeather;
+import weather.forecast.FiveDayForecast;
+
 
 public interface WeatherService {
     @GET("/data/2.5/weather?appid=ad99288cc4c0b1d1b4679643ad72edc4&units=imperial")

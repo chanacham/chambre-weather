@@ -1,9 +1,9 @@
 
-package weather.forecastClasses;
+package weather.forecast;
 
-import weather.chambre.Clouds;
-import weather.chambre.Weather;
-import weather.chambre.Wind;
+import weather.sharedclasses.Clouds;
+import weather.sharedclasses.Weather;
+import weather.sharedclasses.Wind;
 
 public class List {
 

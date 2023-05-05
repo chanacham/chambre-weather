@@ -1,5 +1,5 @@
 
-package weather.currentClasses;
+package weather.current;
 
 public class Main {
     private Double mFeelsLike;

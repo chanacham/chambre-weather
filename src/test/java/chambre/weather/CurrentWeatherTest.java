@@ -1,8 +1,8 @@
 package chambre.weather;
 
 import weather.WeatherService;
-import weather.currentClasses.CurrentWeather;
-import weather.forecastClasses.FiveDayForecast;
+import weather.current.CurrentWeather;
+import weather.forecast.FiveDayForecast;
 import org.junit.jupiter.api.Test;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;

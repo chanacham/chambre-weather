@@ -1,5 +1,5 @@
 
-package weather.chambre;
+package weather.sharedclasses;
 
 public class Wind {
 

@@ -1,5 +1,5 @@
 
-package weather.forecastClasses;
+package weather.forecast;
 
 public class Main {
 
