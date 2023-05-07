@@ -11,7 +11,7 @@ public class List {
     private Long dt;
     private String dt_txt;
     private Main main;
-    private Long pop;
+    private Double pop;
     private Sys sys;
     private Long visibility;
     private java.util.List<Weather> weather;
