@@ -7,7 +7,6 @@ import java.awt.*;
 
 
 public class ForecastWeatherFrame extends JFrame {
-    private JButton submit = new JButton("Submit");
     private final TextField location = new TextField("New York");
     private final ForecastWeatherView view;
     private ForecastWeatherController controller;
@@ -30,6 +29,7 @@ public class ForecastWeatherFrame extends JFrame {
         cityPanel.setLayout(new GridLayout(1, 2));
 
         cityPanel.add(location, BorderLayout.CENTER);
+        JButton submit = new JButton("Submit");
         cityPanel.add(submit, BorderLayout.EAST);
         panel.add(cityPanel, BorderLayout.NORTH);
 

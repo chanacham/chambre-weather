@@ -10,19 +10,19 @@ import java.util.List;
 
 public class CurrentWeather {
 
-    private String mBase;
-    private Clouds mClouds;
-    private Long mCod;
-    private Coord mCoord;
-    private Long mDt;
-    private Long mId;
+    private String base;
+    private Clouds clouds;
+    private Long cod;
+    private Coord coord;
+    private Long dt;
+    private Long id;
     private Main main;
-    private String mName;
-    private Sys mSys;
-    private Long mTimezone;
-    private Long mVisibility;
-    private List<Weather> mWeather;
-    private Wind mWind;
+    private String name;
+    private Sys sys;
+    private Long timezone;
+    private Long visibility;
+    private List<Weather> weather;
+    private Wind wind;
 
     public Main getMain() {
         return main;

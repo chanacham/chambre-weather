@@ -7,15 +7,15 @@ import weather.sharedclasses.Wind;
 
 public class List {
 
-    private Clouds mClouds;
-    private Long mDt;
-    private String mDtTxt;
+    private Clouds clouds;
+    private Long dt;
+    private String dt_txt;
     private Main main;
-    private Long mPop;
-    private Sys mSys;
-    private Long mVisibility;
+    private Long pop;
+    private Sys sys;
+    private Long visibility;
     private java.util.List<Weather> weather;
-    private Wind mWind;
+    private Wind wind;
 
     public Main getMain() {
         return main;

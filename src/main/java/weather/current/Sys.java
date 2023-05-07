@@ -3,9 +3,9 @@ package weather.current;
 
 
 public class Sys {
-    private String mCountry;
-    private Long mId;
-    private Long mSunrise;
-    private Long mSunset;
-    private Long mType;
+    private String country;
+    private Long id;
+    private Long sunrise;
+    private Long sunset;
+    private Long type;
 }
