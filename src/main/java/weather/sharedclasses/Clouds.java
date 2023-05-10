@@ -3,7 +3,7 @@ package weather.sharedclasses;
 
 public class Clouds {
 
-    private Long all;
+    private Long mAll;
 
 
 }

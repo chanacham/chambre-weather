@@ -3,8 +3,8 @@ package weather.sharedclasses;
 
 public class Weather {
 
-    private String description;
-    private String icon;
-    private Long id;
-    private String main;
+    private String mDescription;
+    private String mIcon;
+    private Long mId;
+    private String mMain;
 }
