@@ -13,4 +13,8 @@ public class Main {
     public Long getHumidity() {
         return humidity;
     }
+
+    public Double getTemp() {
+        return temp;
+    }
 }

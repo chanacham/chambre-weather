@@ -3,7 +3,7 @@ package weather.sharedclasses;
 
 public class Wind {
 
-    private Long mDeg;
-    private Double mGust;
-    private Double mSpeed;
+    private Long deg;
+    private Double gust;
+    private Double speed;
 }

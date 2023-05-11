@@ -27,4 +27,8 @@ public class CurrentWeather {
     public Main getMain() {
         return main;
     }
+
+    public List<Weather> getWeather() {
+        return weather;
+    }
 }
