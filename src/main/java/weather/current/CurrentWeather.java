@@ -31,4 +31,48 @@ public class CurrentWeather {
     public List<Weather> getWeather() {
         return weather;
     }
+
+    public String getBase() {
+        return base;
+    }
+
+    public Clouds getClouds() {
+        return clouds;
+    }
+
+    public Long getCod() {
+        return cod;
+    }
+
+    public Coord getCoord() {
+        return coord;
+    }
+
+    public Long getDt() {
+        return dt;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Sys getSys() {
+        return sys;
+    }
+
+    public Long getTimezone() {
+        return timezone;
+    }
+
+    public Long getVisibility() {
+        return visibility;
+    }
+
+    public Wind getWind() {
+        return wind;
+    }
 }

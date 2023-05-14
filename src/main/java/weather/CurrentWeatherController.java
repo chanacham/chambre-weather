@@ -31,11 +31,12 @@ public class CurrentWeatherController {
     }
 
     public void setCurrentWeather(CurrentWeather currentWeather) throws MalformedURLException {
-        degreesLabel.setText(String.valueOf(currentWeather.getMain().getTemp()));
-        String icon = currentWeather.getWeather().get(0).getIcon();
-        String url = "http://openweathermap.org/img/w/" + icon+ ".png";
-        imageLabel.setIcon(new ImageIcon(new URL(url)));
-
+        if(currentWeather.getMain() != null) {
+            degreesLabel.setText(String.valueOf(currentWeather.getMain().getTemp()));
+            String icon = currentWeather.getWeather().get(0).getIcon();
+            String url = "http://openweathermap.org/img/w/" + icon + ".png";
+            imageLabel.setIcon(new ImageIcon(new URL(url)));
+        }
     }
 
 
